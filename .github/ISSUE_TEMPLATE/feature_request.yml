@@ -1,0 +1,36 @@
+name: "Feature Request"
+description: Suggest an new feature/functionality or something new to be implemented or improved
+title: "[Feature]: "
+labels: ["enhancement"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        You can use '@' to call on team members or assign this issue to one of us
+
+  - type: input
+    id: feature-summary
+    attributes:
+      label: Feature Summary
+      description: Provide a clear and concise description of what the feature is.
+      placeholder: "e.g., A new optimization algorithm for..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: feature-benefit
+    attributes:
+      label: Benefits
+      description: Explain the benefits this feature would provide.
+      placeholder: "e.g., This would improve processing speed by..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add any other context or screenshots about the feature request here.
+    validations:
+      required: false
