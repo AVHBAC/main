@@ -20,6 +20,6 @@ jobs:
       - name: Build_Vivado_from_tcl
         shell: bash
         run: |
-          cd ~/AVHBAC_GitHubAVHBAC_GitHub/actions-runner/AVHBAC_runner_out/main/main/src/fpga/overlays/kria_i2c_dcmi_dpu/
+          cd ~/AVHBAC_GitHub/actions-runner/AVHBAC_runner_out/main/main/src/fpga/overlays/kria_i2c_dcmi_dpu/
           make clean
           make xsa XILINX_VIVADO=/opt/Xilinx/Vivado/2023.2
