@@ -1,4 +1,6 @@
 name: Vivado builds
+
+on:
   push:
     branches: [main] 
     paths:
