@@ -1,11 +1,10 @@
 name: Vivado builds
 
-on:
-  push:
-    branches: [main] 
   pull_request:
     branches: [main]
-    types: [review_requested, synchronize]
+    types: [review_requested, ready_for_review]
+    paths:
+      - 'src/fpga/overlays/kria_i2c_dcmi_dpu/**'
 
 jobs:
   Clone_Repo:
@@ -25,6 +24,14 @@ jobs:
           make clean
           make xsa XILINX_VIVADO=/opt/Xilinx/Vivado/2023.2
 
+  
+on:
+  push:
+    branches: [main] 
+    paths:
+      - 'src/fpga/overlays/kria_i2c_dcmi_dpu/**'
+
+jobs:
   Upload_bitstream_to_Artifacts:
     runs-on: Vivado2023.02
     needs: Build_kria_i2c_dcmi_dpu
