@@ -7,7 +7,7 @@ on:
       - 'src/fpga/overlays/kria_i2c_dcmi_dpu/**'
   pull_request:
     branches: [main]
-    types: [review_requested, ready_for_review, synchronize]
+    types: [review_requested, ready_for_review, auto_merge_enabled]
     paths:
       - 'src/fpga/overlays/kria_i2c_dcmi_dpu/**'
 
@@ -38,3 +38,13 @@ jobs:
         with:
           name: bitstream
           path: ~/AVHBAC_GitHub/actions-runner/AVHBAC_runner_out/main/main/src/fpga/overlays/kria_i2c_dcmi_dpu/project/FPGA_Prosthetic.bit
+
+  Workspace_Cleanup:
+    runs-on: Vivado2023.02
+    needs: Upload_bitstream_to_Artifacts
+    steps:
+      - name: Workspace_Cleanup
+        shell: bash
+        run: |
+          rm -rf ~/AVHBAC_GitHub/actions-runner/AVHBAC_runner_out/main
+  
