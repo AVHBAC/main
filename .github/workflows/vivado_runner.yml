@@ -29,14 +29,6 @@ jobs:
           make clean
           make xsa XILINX_VIVADO=/opt/Xilinx/Vivado/2023.2
 
-name: Vivado builds (main branch only)
-on:
-  push:
-    branches: [main] 
-    paths:
-      - 'src/fpga/overlays/kria_i2c_dcmi_dpu/**'
-
-jobs:
   Upload_bitstream_to_Artifacts:
     runs-on: Vivado2023.02
     needs: Build_kria_i2c_dcmi_dpu
