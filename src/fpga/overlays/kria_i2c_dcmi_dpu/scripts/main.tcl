@@ -85,9 +85,9 @@ foreach ip [get_ips] {
 
 close $fd
 
-puts $fd "##########################################################################"
-puts $fd "STARTING SYNTHEIS"
-puts $fd "##########################################################################"
+puts "##########################################################################"
+puts "STARTING SYNTHEIS"
+puts "##########################################################################"
 set_property synth_checkpoint_mode Hierarchical [get_files $proj_dir/${proj_name}.srcs/sources_1/bd/$proj_name/${proj_name}.bd]
 launch_runs synth_1 -jobs $jobs
 wait_on_run synth_1
@@ -117,15 +117,15 @@ set_property platform.version "1.0" [current_project]
 write_hw_platform -force -file $proj_dir/${proj_name}.xsa
 validate_hw_platform -verbose $proj_dir/${proj_name}.xsa
 
-puts $fd "##########################################################################"
-puts $fd "STARTING IMPLEMENTATION"
-puts $fd "##########################################################################"
+puts "##########################################################################"
+puts "STARTING IMPLEMENTATION"
+puts "##########################################################################"
 launch_runs impl_1 -jobs $jobs
 wait_on_run impl_1
 
-puts $fd "##########################################################################"
-puts $fd "STARTING WRITE BITSTREAM"
-puts $fd "##########################################################################"
+puts "##########################################################################"
+puts "STARTING WRITE BITSTREAM"
+puts "##########################################################################"
 write_bitstream -force -file $proj_dir/${proj_name}.bit
 
 exit
