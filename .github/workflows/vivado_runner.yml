@@ -13,8 +13,6 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-      with:
-        path: ~/AVHBAC_GitHub/build_out_dir
 
   Build-kria_i2c_dcmi_dpu:
     runs-on: Vivado2023.02
@@ -22,6 +20,6 @@ jobs:
       - name: Build_Vivado_from_tcl
         shell: bash
         run: |
-          cd ~/AVHBAC_GitHub/build_out_dir/main/src/fpga/overlays/kria_i2c_dcmi_dpu/
+          cd ~/AVHBAC_GitHubAVHBAC_GitHub/actions-runner/AVHBAC_runner_out/main/main/src/fpga/overlays/kria_i2c_dcmi_dpu/
           make clean
           make xsa XILINX_VIVADO=/opt/Xilinx/Vivado/2023.2
