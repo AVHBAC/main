@@ -14,7 +14,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-  Build-kria_i2c_dcmi_dpu:
+  Build_kria_i2c_dcmi_dpu:
     runs-on: Vivado2023.02
     needs: Clone_Repo
     steps:
@@ -24,3 +24,10 @@ jobs:
           cd ~/AVHBAC_GitHub/actions-runner/AVHBAC_runner_out/main/main/src/fpga/overlays/kria_i2c_dcmi_dpu/
           make clean
           make xsa XILINX_VIVADO=/opt/Xilinx/Vivado/2023.2
+
+  Upload_bitstream_to_Artifacts:
+  - name: Upload_bitstream_to_Artifacts
+    uses: actions/upload-artifact@v4
+    with:
+      name: bitstream
+      path: ~/AVHBAC_GitHub/actions-runner/AVHBAC_runner_out/main/main/src/fpga/overlays/kria_i2c_dcmi_dpu/project/FPGA_Prosthetic.bit
