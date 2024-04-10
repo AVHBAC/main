@@ -16,6 +16,7 @@ jobs:
 
   Build-kria_i2c_dcmi_dpu:
     runs-on: Vivado2023.02
+    needs: Clone_Repo
     steps:
       - name: Build_Vivado_from_tcl
         shell: bash
