@@ -122,6 +122,7 @@ puts "STARTING IMPLEMENTATION"
 puts "##########################################################################"
 launch_runs impl_1 -jobs $jobs
 wait_on_run impl_1
+open_run impl_1
 
 puts "##########################################################################"
 puts "STARTING WRITE BITSTREAM"

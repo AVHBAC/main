@@ -2,7 +2,7 @@ name: Vivado builds
 
   pull_request:
     branches: [main]
-    types: [review_requested, ready_for_review]
+    types: [review_requested, ready_for_review, synchronize]
     paths:
       - 'src/fpga/overlays/kria_i2c_dcmi_dpu/**'
 
