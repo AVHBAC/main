@@ -19,4 +19,4 @@
 
 ## Block Diagram of Design:
 
-![alt text](https://github.com/AVHBAC/main/tree/I2C-Pynq/BlockDesign.png)
+<img src="https://github.com/AVHBAC/main/blob/I2C-Pynq/BlockDesign.PNG">
